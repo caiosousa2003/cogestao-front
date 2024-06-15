@@ -1,8 +1,20 @@
+import { Button, ContainerButtons, ContainerHeader, Logo } from "./styles";
+import logo from '../../assets/LogoWebSite.png';
+import { useNavigate } from 'react-router-dom';
+
 function Header() {
+
+  const navigate = useNavigate();
 
   return (
     <div>
-      <h1>HEADER</h1>
+      <ContainerHeader>
+        <Logo src={logo} alt="logo" onClick={()=>navigate('/')}></Logo>
+        <ContainerButtons>
+          <Button onClick={()=>navigate('/')}>Home</Button>
+          <Button onClick={()=>navigate('/eventos')}>Eventos</Button>
+        </ContainerButtons>
+      </ContainerHeader>
     </div>
   );
 }
