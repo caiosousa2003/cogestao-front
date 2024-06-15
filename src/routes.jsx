@@ -4,10 +4,10 @@ import {
     createRoutesFromElements,
     RouterProvider,
   } from 'react-router-dom';
-import AppLayout from './components/appLayout/AppLayout';
+import AppLayout from './components/AppLayout/AppLayout';
 import Home from './pages/Home/Home';
-import GerenciarEventos from './pages/GerenciarEventos/GerenciarEventos';
-import Eventos from './pages/Eventos/Eventos';
+import Events from './pages/Events/Events';
+import ManageEvents from './pages/ManageEvents/ManageEvents';
   
   
   const router = createBrowserRouter(
@@ -15,8 +15,8 @@ import Eventos from './pages/Eventos/Eventos';
       <Route>
         <Route path='/' element={<AppLayout />}>
             <Route index element={<Home />} />
-            <Route path="gerenciar-eventos" element={<GerenciarEventos/>}/>
-            <Route path="eventos" element={<Eventos/>}/>
+            <Route path="gerenciar-eventos" element={<ManageEvents/>}/>
+            <Route path="eventos" element={<Events/>}/>
         </Route>
       </Route>,
     ),

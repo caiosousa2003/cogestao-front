@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
-import { Container, ContainerConteudo } from "./styleAppLayout"
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
+import { Container, ContainerConteudo } from "./styles"
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 
 export default function AppLayout() {
