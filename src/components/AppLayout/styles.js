@@ -7,5 +7,5 @@ export const Container = styled.div`
 `;
 
 export const ContainerConteudo = styled.div`
-    flex: 1;
+    flex: auto;
 `;

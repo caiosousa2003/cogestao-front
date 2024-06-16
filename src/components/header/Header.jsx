@@ -1,5 +1,5 @@
 import { Button, ContainerButtons, ContainerHeader, Logo } from "./styles";
-import logo from '../../assets/LogoWebSite.png';
+import logo from '../../assets/LogoHeader.png';
 import { useNavigate } from 'react-router-dom';
 
 function Header() {
