@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { createEvents, deleteEvents, getEvents, updateEvents } from "../../services/api/endpoints";
+import { createEvents, deleteEvents, getEvents, updateEvents } from "../../services/endpoints";
 
 export function useGetEvents({
     onSuccess = () => {},

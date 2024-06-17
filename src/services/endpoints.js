@@ -17,7 +17,7 @@ export async function deleteEvents(id) {
   return data;
 }
 
-export async function updateUsuario(obj) {
+export async function updateEvents(obj) {
   const { data } = await api.put(`/events/${obj.id}`, obj.body);
   return data;
 }

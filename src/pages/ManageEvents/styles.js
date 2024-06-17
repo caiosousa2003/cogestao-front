@@ -10,14 +10,33 @@ export const ContainerMain = styled.div`
 export const Title = styled.h1`
     font-size: 36px;
     font-weight: bold;
+    text-align: center;
+    @media screen and (max-width: 756px) {
+        font-size: 32px;
+    }
+    @media screen and (max-width: 644px) {
+        font-size: 28px;
+    }
+    @media screen and (max-width: 544px) {
+        font-size: 24px;
+        width: 85%;
+    }
+    @media screen and (max-width: 300px) {
+        font-size: 22px;
+        width: 90%;
+    }
 `;
 
 export const Line = styled.hr`
-    width: 65rem;
+    max-width: 68rem; 
+    width: 90%;
     margin-top: 10px;
     margin-bottom: 30px;
     background-color: #ffd599;
     height: 2px;
+    @media screen and (max-width: 544px) {
+        width: 100%;
+    }
 `;
 
 export const Form = styled.form`
@@ -26,9 +45,9 @@ export const Form = styled.form`
     align-items: center;
     gap: 20px;
     max-width: 800px;
-    width: 60vw;
+    width: 100%;
     height: 100%;
-    margin-bottom: 40px;;
+    margin-bottom: 40px;
 `;
 
 export const ContainerLabel = styled.div`
@@ -49,6 +68,9 @@ export const Label = styled.label`
     font-weight: bold;
     margin-right: 5px;
     margin-left: 3px;
+    @media screen and (max-width: 544px) {
+        font-size: 14px;
+    }
 `;
 
 export const Icon = styled.div`
@@ -57,6 +79,10 @@ export const Icon = styled.div`
     align-items: end;
     width: 18px;
     height: 18px;
+    @media screen and (max-width: 544px) {
+        width: 14px;
+        height: 14px;
+    }
 `;
 
 export const Input = styled.input`
@@ -65,15 +91,49 @@ export const Input = styled.input`
     height: 40px;
     background-color: transparent;
     border: ${(props) => (props?.borda ? "2px solid red" : "2px solid white")};
-    font-size: 18px;
+    font-size: 16px;
+    padding: 5px;
+    color: white;
     &:focus {
         outline: none;
         border: 2px solid gray;
     }
+    @media screen and (max-width: 544px) {
+        font-size: 12px;
+        height: 30px;
+    }
+`;
+
+export const Select = styled.select`
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: ${(props) => (props?.borda ? "2px solid red" : "2px solid white")};
+    font-size: 16px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    &:invalid{
+        color: gray;
+    }
+    &:focus {
+        outline: none;
+        border: 2px solid gray;
+    }
+    @media screen and (max-width: 544px) {
+        font-size: 12px;
+        height: 30px;
+    }
+`;
+
+export const Option = styled.option`
+    color: black;
 `;
 
 export const ContainerSelect = styled.div`
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
     height: 100%;
 `;
 
@@ -85,6 +145,14 @@ export const Button = styled.button`
     border: none;
     border-radius: 10px;
     margin-top: 20px;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.9;
+    }
+    @media screen and (max-width: 544px) {
+        padding: 10px 30px 10px 30px;
+        font-size: 20px;
+    }
 `;
 
 export const Alert = styled.p`
