@@ -1,10 +1,28 @@
-function Card() {
+import { ContainerBackCard, ContainerCard, ContainerIcons, IconEdit, IconTrash, Image } from "./styles";
+
+export default function cardEvent({ event, showModalConfirm, showModalEdit }) {
 
     return (
       <div>
-        <h1>CARD</h1>
-      </div>
+        <ContainerCard
+        cover={
+          <Image
+            alt="example"
+            src={event?.image}
+          />
+        }
+        actions={[
+        ]}
+      >
+        <ContainerBackCard
+          title={event?.title}
+          description={event?.description}
+        />
+        <ContainerIcons>
+          <IconEdit onClick={showModalEdit}/>
+          <IconTrash onClick={showModalConfirm}/>
+        </ContainerIcons>
+      </ContainerCard>
+    </div>
     );
   }
-  
-  export default Card;
