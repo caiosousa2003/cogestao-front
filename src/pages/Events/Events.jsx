@@ -1,4 +1,4 @@
-function Eventos() {
+function Events() {
 
     return (
       <div>
@@ -7,4 +7,4 @@ function Eventos() {
     );
   }
   
-  export default Eventos;
+  export default Events;
