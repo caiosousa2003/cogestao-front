@@ -1,7 +1,5 @@
 import api from './api';
 
-// EVENTOS
-
 export async function getEvents() {
   const { data } = await api.get(`/events`);
   return data;

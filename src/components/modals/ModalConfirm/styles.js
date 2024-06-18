@@ -22,7 +22,7 @@ export const ModalBtn = styled.button`
   width: 200px;
   font-size: 22px;
   font-weight: bold;
-  height: 30px;
+  height: 40px;
   background: transparent;
   border-radius: 12px;
   color: #fdd100;
@@ -30,6 +30,8 @@ export const ModalBtn = styled.button`
   margin-top: 20px;
   border: 1px solid #fdd100;
   cursor: pointer;
+  padding-bottom: 5px;
+  padding-top: 5px;
 
   @media screen and (max-width: 380px) {
     width: 50%;

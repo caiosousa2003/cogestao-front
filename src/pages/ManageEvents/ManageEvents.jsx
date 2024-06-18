@@ -132,7 +132,7 @@ function ManageEvents() {
             </Select>
             {!!errors?.category?.message && <Alert>{errors?.category?.message}</Alert>}
           </ContainerSelect>
-          <Button>ENVIAR</Button>
+          <Button type="submit">ENVIAR</Button>
         </Form>
         <Title>GERENCIAR EVENTOS</Title>
         <Line></Line>
