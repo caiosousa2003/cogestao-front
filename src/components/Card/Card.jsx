@@ -1,6 +1,7 @@
 import { ContainerBackCard, ContainerCard, ContainerIcons, IconEdit, IconTrash, Image } from "./styles";
+import PropTypes from 'prop-types';
 
-export default function cardEvent({ event, showModalConfirm, showModalEdit }) {
+export default function CardEvent({ event, showModalConfirm, showModalEdit }) {
 
     return (
       <div>
@@ -26,3 +27,9 @@ export default function cardEvent({ event, showModalConfirm, showModalEdit }) {
     </div>
     );
   }
+
+CardEvent.propTypes = {
+  event: PropTypes.object.isRequired,
+  showModalConfirm: PropTypes.func.isRequired,
+  showModalEdit: PropTypes.func.isRequired, 
+};

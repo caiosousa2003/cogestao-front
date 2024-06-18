@@ -101,7 +101,7 @@ function ManageEvents() {
               <Label>Título </Label>
               <Icon><AiFillEdit style={{ height: "100%", width: "100%" }}/></Icon>
             </ContainerLabel>
-            <Input placeholder="Festa" autocomplete="off" name="title" error={errors} borda ={!!errors?.title?.message} {...register("title")}></Input>
+            <Input placeholder="Festa" autoComplete="off" name="title" error={errors} borda ={!!errors?.title?.message} {...register("title")}></Input>
             {!!errors?.title?.message && <Alert>{errors?.title?.message}</Alert>}
           </ContainerInput>
           <ContainerInput>
@@ -109,7 +109,7 @@ function ManageEvents() {
               <Label>Imagem </Label>
               <Icon><AiOutlineAliyun style={{ height: "100%", width: "100%" }}/></Icon>
             </ContainerLabel>
-            <Input placeholder="https://................" autocomplete="off" name="image" error={errors} borda ={!!errors?.image?.message} {...register("image")}></Input>
+            <Input placeholder="https://................" autoComplete="off" name="image" error={errors} borda ={!!errors?.image?.message} {...register("image")}></Input>
             {!!errors?.image?.message && <Alert>{errors?.image?.message}</Alert>}
           </ContainerInput>
           <ContainerInput>
@@ -117,7 +117,7 @@ function ManageEvents() {
               <Label>Descrição </Label>
               <Icon><AiOutlineCopy style={{ height: "100%", width: "100%" }}/></Icon>
             </ContainerLabel>
-            <Input placeholder="Descrição curta" autocomplete="off" name="description" error={errors} borda ={!!errors?.description?.message} {...register("description")}></Input>
+            <Input placeholder="Descrição curta" autoComplete="off" name="description" error={errors} borda ={!!errors?.description?.message} {...register("description")}></Input>
             {!!errors?.description?.message && <Alert>{errors?.description?.message}</Alert>}
           </ContainerInput>
           <ContainerSelect>

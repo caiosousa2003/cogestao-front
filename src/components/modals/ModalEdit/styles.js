@@ -112,10 +112,9 @@ export const Input = styled.input`
     border: ${(props) => (props?.borda ? "2px solid red" : "2px solid black")};
     font-size: 16px;
     padding: 5px;
-    color: white;
+    color: black;
     &:focus {
         outline: none;
-        border: 2px solid gray;
     }
     @media screen and (max-width: 544px) {
         font-size: 12px;
@@ -138,7 +137,6 @@ export const Select = styled.select`
     }
     &:focus {
         outline: none;
-        border: 2px solid yellow;
     }
     @media screen and (max-width: 544px) {
         font-size: 12px;

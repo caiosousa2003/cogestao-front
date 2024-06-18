@@ -5,8 +5,9 @@ import {
     ModalTlt,
     Text,
 } from "./styles";
+import PropTypes from 'prop-types';
   
-export default function modalConfirm({ isModalOpen, cancel, confirmDelete, item }) {
+export default function ModalConfirm({ isModalOpen, cancel, confirmDelete, item }) {
 
 return (
     <>
@@ -24,3 +25,10 @@ return (
     </>
 );
 }
+
+ModalConfirm.propTypes = {
+    isModalOpen: PropTypes.bool.isRequired,
+    cancel: PropTypes.func.isRequired,
+    confirmDelete: PropTypes.func.isRequired,
+    item: PropTypes.string.isRequired,
+  };
