@@ -1,16 +1,19 @@
 import { z } from "zod";
 
 export const validador = z.object({
-    nome: z
-      .string({ required_error: "Insira um nome!" })
-      .min(2, {message: "O projeto deve ter no mínimo 2 carácteres!"})
-      .max(20, { message: "Limite máximo de carácteres alcançado!" }),
-    descricao: z
-        .string({ required_error: "Insira uma descrição!" })
-        .min(10, {message: "A descrição deve ter no mínimo 10 carácteres!"})
-        .max(100, { message: "Limite máximo de carácteres alcançado!" }),
-    equipe: z
-        .string({ required_error: "Insira a equipe responsável!" })
-        .min(2, {message: "O nome da equipe deve ter no mínimo 2 carácteres!"})
-        .max(20, { message: "Limite máximo de carácteres alcançado!" }),
+    title: z
+      .string({ required_error: "Insira um título válido!" })
+      .min(1, {message: "Título é um campo obrigatório! Insira um título!"})
+      .max(30, { message: "Limite máximo de 30 carácteres alcançado!" }),
+    description: z
+        .string({ required_error: "Insira uma descrição válida!" })
+        .min(1, {message: "Descrição é um campo obrigatório! Insira uma descrição!"})
+        .max(80, { message: "Limite máximo de 90 carácteres alcançado!" }),
+    category: z
+        .string({ required_error: "Escolha uma categoria válida!" })
+        .min(1, {message: "Escolha uma categoria válida!"}),
+    image: z
+        .string({ required_error: "Insira um link válido para a imagem!" })
+        .min(1, {message: "Link da imagem é um campo obrigatório! Insira-o!"})
+        .url("Insira um link válido para a imagem!"),
   });
