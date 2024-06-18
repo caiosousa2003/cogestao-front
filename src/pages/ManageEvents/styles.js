@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { BiLoaderCircle } from "react-icons/bi";
 
 export const ContainerMain = styled.div`
     display: flex;
@@ -167,6 +168,25 @@ export const Alert = styled.p`
 `;
 
 export const ContainerList = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 400px);
+    gap: 20px;
+
+    @media screen and (max-width: 1700px) {
+        grid-template-columns: repeat(3, 400px);
+    }
+    @media screen and (max-width: 1300px) {
+        grid-template-columns: repeat(2, 400px);
+    }
+    @media screen and (max-width: 900px) {
+        grid-template-columns: repeat(1, 400px);
+    }
+    @media screen and (max-width: 544px) {
+        grid-template-columns: repeat(2, 200px);
+    }
+    @media screen and (max-width: 470px) {
+        grid-template-columns: repeat(1, 200px);
+    }
 `;
 
 export const ContainerModalConfirm = styled.div`
@@ -185,4 +205,12 @@ export const ContainerLoading = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    font-size: 24px; 
+    gap: 30px;
+`;
+
+export const LoadIcon = styled(BiLoaderCircle)`
+    height: 100px;
+    width: auto;
 `;

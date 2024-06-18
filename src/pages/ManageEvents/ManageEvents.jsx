@@ -1,4 +1,4 @@
-import { Alert, Button, ContainerInput, ContainerLabel, ContainerList, ContainerLoading, ContainerMain, ContainerModalConfirm, ContainerModalEdit, ContainerSelect, Select, Form, Icon, Input, Label, Line, Title, Option } from "./styles";
+import { Alert, Button, ContainerInput, ContainerLabel, ContainerList, ContainerLoading, ContainerMain, ContainerModalConfirm, ContainerModalEdit, ContainerSelect, Select, Form, Icon, Input, Label, Line, Title, Option, LoadIcon } from "./styles";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CardEvent from "../../components/Card/Card";
@@ -8,9 +8,10 @@ import { useCreateEvents, useDeleteEvents, useGetEvents } from "../../hooks/quer
 import { useState } from "react";
 import ModalConfirm from "../../components/modals/ModalConfirm/ModalConfirm";
 import ModalEdit from "../../components/modals/ModalEdit/ModalEdit";
+import { validador } from "./utils";
 
 function ManageEvents() {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm(); // useForm({ resolver: zodResolver(validador) })
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({ resolver: zodResolver(validador) });
   const [isModalConfirmOpen, setIsModalConfirmOpen] = useState(false);
   const [isModalEditOpen, setIsModalEditOpen] = useState(false);
   const [id, setId] = useState();
@@ -18,7 +19,7 @@ function ManageEvents() {
 
   const queryClient = useQueryClient();
 
-  const { data: events } = useGetEvents({
+  const { data: events, isLoading } = useGetEvents({
       onError: (err) => {
           alert(err.response.data.message);
       },
@@ -135,8 +136,8 @@ function ManageEvents() {
         </Form>
         <Title>GERENCIAR EVENTOS</Title>
         <Line></Line>
+        {isLoading && <ContainerLoading>CARREGANDO...<LoadIcon/></ContainerLoading>}
         <ContainerList>
-          <ContainerLoading></ContainerLoading>
           {events ? 
             events.map((event, index) => (
               <CardEvent key={index} event={event} showModalConfirm={() => showModalConfirm(event?._id)} showModalEdit={() => showModalEdit(event)}></CardEvent>
