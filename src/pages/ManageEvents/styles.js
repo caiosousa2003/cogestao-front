@@ -91,7 +91,7 @@ export const Input = styled.input`
     width: 100%;
     height: 40px;
     background-color: transparent;
-    border: ${(props) => (props?.borda ? "2px solid red" : "2px solid white")};
+    border: ${(props) => (props?.border ? "2px solid red" : "2px solid white")};
     font-size: 16px;
     padding: 5px;
     color: white;
@@ -110,7 +110,7 @@ export const Select = styled.select`
     width: 100%;
     height: 40px;
     background-color: transparent;
-    border: ${(props) => (props?.borda ? "2px solid red" : "2px solid white")};
+    border: ${(props) => (props?.border ? "2px solid red" : "2px solid white")};
     font-size: 16px;
     padding: 5px;
     color: white;
@@ -140,9 +140,9 @@ export const ContainerSelect = styled.div`
 
 export const Button = styled.button`
     background-color: #f19709;
-    padding: 20px 60px 20px 60px;
+    padding: 15px 40px 15px 40px;
     color: white;
-    font-size: 28px;
+    font-size: 26px;
     border: none;
     border-radius: 10px;
     margin-top: 20px;
@@ -151,8 +151,8 @@ export const Button = styled.button`
         opacity: 0.9;
     }
     @media screen and (max-width: 544px) {
-        padding: 10px 30px 10px 30px;
-        font-size: 20px;
+        padding: 7.5px 20px 7.5px 20px;
+        font-size: 18px;
     }
 `;
 

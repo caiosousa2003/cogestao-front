@@ -1,34 +1,59 @@
+import { useQueryClient } from "@tanstack/react-query";
 import {
     ModalStyle,
-    ModalBtn,
     GlobalDiv,
-    ModalTlt,
     Text,
+    ModalTitle,
+    ModalButton,
 } from "./styles";
 import PropTypes from 'prop-types';
+import { useDeleteEvents } from "../../../hooks/query/Event";
   
-export default function ModalConfirm({ isModalOpen, cancel, confirmDelete, item }) {
+export default function ModalConfirm({ isModalOpen, setIsModalOpen, setId, id, item }) {
+
+    const queryClient = useQueryClient();
+
+    const { mutate: deleteEvent } = useDeleteEvents({
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: ["events"]
+            });
+        },
+        onError: (err) => {
+            alert(err.response.data.message);
+        },
+    });
+
+    const confirmDelete = () => {
+        deleteEvent(id);
+        setId(null);
+        setIsModalOpen(false);
+      }
+    
+    const cancel = () => {
+        setId(null);
+        setIsModalOpen(false);
+    };
 
 return (
-    <>
     <ModalStyle
         open={isModalOpen}
         onCancel={cancel}
         footer={null}
     >
         <GlobalDiv>
-        <ModalTlt>Excluir {item}</ModalTlt>
+        <ModalTitle>Excluir {item}</ModalTitle>
         <Text>Tem certeza que você deseja excluir esse {item}?</Text>
-        <ModalBtn onClick={confirmDelete}>EXCLUIR</ModalBtn>
+        <ModalButton onClick={confirmDelete}>EXCLUIR</ModalButton>
         </GlobalDiv>
     </ModalStyle>
-    </>
 );
 }
 
 ModalConfirm.propTypes = {
     isModalOpen: PropTypes.bool.isRequired,
-    cancel: PropTypes.func.isRequired,
-    confirmDelete: PropTypes.func.isRequired,
+    setIsModalOpen: PropTypes.func.isRequired,
+    setId: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
     item: PropTypes.string.isRequired,
   };

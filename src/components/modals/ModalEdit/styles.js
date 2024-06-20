@@ -19,7 +19,7 @@ export const ModalStyle = styled(Modal)`
 
 `;
 
-export const ModalBtn = styled.button`
+export const ModalButton = styled.button`
   font-family: 'Cabin', sans-serif;
   width: 200px;
   font-size: 22px;
@@ -49,7 +49,7 @@ export const GlobalDiv = styled.div`
   align-items: center;
 `;
 
-export const ModalTlt = styled.h1`
+export const ModalTitle = styled.h1`
   color: black;
   font-weight: bold;
   min-width: 210px;
@@ -109,7 +109,7 @@ export const Input = styled.input`
     width: 100%;
     height: 40px;
     background-color: transparent;
-    border: ${(props) => (props?.borda ? "2px solid red" : "2px solid black")};
+    border: ${(props) => (props?.border ? "2px solid red" : "2px solid black")};
     font-size: 16px;
     padding: 5px;
     color: black;
@@ -127,7 +127,7 @@ export const Select = styled.select`
     width: 100%;
     height: 40px;
     background-color: transparent;
-    border: ${(props) => (props?.borda ? "2px solid red" : "2px solid black")};
+    border: ${(props) => (props?.border ? "2px solid red" : "2px solid black")};
     font-size: 16px;
     padding: 5px;
     color: black;

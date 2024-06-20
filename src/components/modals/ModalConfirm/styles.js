@@ -18,7 +18,7 @@ export const ModalStyle = styled(Modal)`
 
 `;
 
-export const ModalBtn = styled.button`
+export const ModalButton = styled.button`
   width: 200px;
   font-size: 22px;
   font-weight: bold;
@@ -46,7 +46,7 @@ export const GlobalDiv = styled.div`
   align-items: center;
 `;
 
-export const ModalTlt = styled.h1`
+export const ModalTitle = styled.h1`
   color: black;
   font-weight: bold;
   white-space: nowrap;
