@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Alert, Option, Input, Select, ContainerSelect, Icon, ContainerInput, Label, ContainerLabel, Form, ModalStyle, GlobalDiv, ModalTitle, ModalButton, } from "./styles";
+import { Alert, Option, Input, Select, ContainerSelect, Icon, ContainerInput, Label, ContainerLabel, Form, ModalStyle, GlobalDiv, ModalTitle, ModalButton, } from "./Styles";
 import { AiFillEdit, AiOutlineCopy, AiOutlineAliyun } from "react-icons/ai"; 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { validador } from "./utils";

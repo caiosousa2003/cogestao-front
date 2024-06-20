@@ -5,7 +5,7 @@ import {
     Text,
     ModalTitle,
     ModalButton,
-} from "./styles";
+} from "./Styles";
 import PropTypes from 'prop-types';
 import { useDeleteEvents } from "../../../hooks/query/Event";
   

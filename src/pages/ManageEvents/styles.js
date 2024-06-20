@@ -97,7 +97,6 @@ export const Input = styled.input`
     color: white;
     &:focus {
         outline: none;
-        border: 2px solid gray;
     }
     @media screen and (max-width: 544px) {
         font-size: 12px;

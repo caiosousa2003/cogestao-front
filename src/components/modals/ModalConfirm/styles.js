@@ -2,6 +2,13 @@ import { Modal } from "antd";
 import { styled } from "styled-components";
 
 export const ModalStyle = styled(Modal)`
+  font-family: 'Cabin', sans-serif;
+  .ant-modal-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .ant-modal-content {
     @media screen and (max-width: 560px) {
         margin: 20px;

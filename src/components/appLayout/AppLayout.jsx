@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import { Container, ContainerConteudo } from "./styles"
+import { Container, ContainerConteudo } from "./Styles"
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 

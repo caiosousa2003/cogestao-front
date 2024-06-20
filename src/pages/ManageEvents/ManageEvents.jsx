@@ -1,4 +1,4 @@
-import { Alert, Button, ContainerInput, ContainerLabel, ContainerList, ContainerLoading, ContainerMain, ContainerModalConfirm, ContainerModalEdit, ContainerSelect, Select, Form, Icon, Input, Label, Line, Title, Option, LoadIcon } from "./Styles";
+import { Alert, Button, ContainerInput, ContainerLabel, ContainerList, ContainerLoading, ContainerMain, ContainerModalConfirm, ContainerModalEdit, ContainerSelect, Select, Form, Icon, Input, Label, Line, Title, Option, LoadIcon } from "./styles";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CardEvent from "../../components/Card/Card";

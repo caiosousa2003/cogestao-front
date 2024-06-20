@@ -1,30 +1,28 @@
-import { ContainerBackCard, ContainerCard, ContainerIcons, IconEdit, IconTrash, Image } from "./styles";
+import { ContainerBackCard, ContainerCard, ContainerIcons, IconEdit, IconTrash, Image } from "./Styles";
 import PropTypes from 'prop-types';
 
 export default function CardEvent({ event, showModalConfirm, showModalEdit }) {
 
     return (
-      <div>
-        <ContainerCard
-        cover={
-          <Image
-            alt="example"
-            src={event?.image}
-          />
-        }
-        actions={[
-        ]}
-      >
-        <ContainerBackCard
-          title={event?.title}
-          description={event?.description}
+      <ContainerCard
+      cover={
+        <Image
+          alt="example"
+          src={event?.image}
         />
-        <ContainerIcons>
-          <IconEdit onClick={showModalEdit}/>
-          <IconTrash onClick={showModalConfirm}/>
-        </ContainerIcons>
-      </ContainerCard>
-    </div>
+      }
+      actions={[
+      ]}
+    >
+      <ContainerBackCard
+        title={event?.title}
+        description={event?.description}
+      />
+      <ContainerIcons>
+        <IconEdit onClick={showModalEdit}/>
+        <IconTrash onClick={showModalConfirm}/>
+      </ContainerIcons>
+    </ContainerCard>
     );
   }
 
