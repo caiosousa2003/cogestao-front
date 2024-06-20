@@ -3,8 +3,8 @@ import { styled } from "styled-components";
 
 export const ModalStyle = styled(Modal)`
    font-family: 'Cabin', sans-serif;
-   top: 57%;
-   transform: translateY(-50%);
+   top: 57% !important;
+   transform: translateY(-50%) !important;
   .ant-modal-content {
     @media screen and (max-width: 560px) {
         margin: 20px;
