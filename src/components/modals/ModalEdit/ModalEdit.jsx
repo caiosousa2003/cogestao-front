@@ -9,12 +9,7 @@ import { useUpdateEvents } from "../../../hooks/query/Event";
 
 export default function ModalEdit({ isModalOpen, setIsModalOpen, event, setEvent }) {
 
-    const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(validador), defaultValues:{
-        title: event?.title || '',
-        image: event?.image || '',
-        description: event?.description || '',
-        category: event?.category || '',
-    } });
+    const { register, reset, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(validador) });
 
     const queryClient = useQueryClient();
 
@@ -33,11 +28,13 @@ export default function ModalEdit({ isModalOpen, setIsModalOpen, event, setEvent
     const onSubmit = (data) => {
         updateEvent({id: event?._id, body: data});
         setEvent(null);
+        reset();
         setIsModalOpen(false);
       };
 
     const cancel = () => {
         setEvent(null);
+        reset();
         setIsModalOpen(false);
     };
 
@@ -55,7 +52,7 @@ return (
                     <Label>Título </Label>
                     <Icon><AiFillEdit style={{ height: "100%", width: "100%" }}/></Icon>
                 </ContainerLabel>
-                <Input placeholder="Mude o título" defaultValue={event?.title} autoComplete="off" name="title" error={errors} border ={!!errors?.title?.message} {...register("title")}></Input>
+                <Input defaultValue={event?.title} autoComplete="off" name="title" error={errors} border ={!!errors?.title?.message} {...register("title")}></Input>
                 {!!errors?.title?.message && <Alert>{errors?.title?.message}</Alert>}
             </ContainerInput>
             <ContainerInput>
@@ -63,7 +60,7 @@ return (
                     <Label>Imagem </Label>
                     <Icon><AiOutlineAliyun style={{ height: "100%", width: "100%" }}/></Icon>
                 </ContainerLabel>
-                <Input placeholder="Mude a imagem" defaultValue={event?.image} autoComplete="off" name="image" error={errors} border ={!!errors?.image?.message} {...register("image")}></Input>
+                <Input defaultValue={event?.image} autoComplete="off" name="image" error={errors} border ={!!errors?.image?.message} {...register("image")}></Input>
                 {!!errors?.image?.message && <Alert>{errors?.image?.message}</Alert>}
             </ContainerInput>
             <ContainerInput>
@@ -71,14 +68,14 @@ return (
                     <Label>Descrição </Label>
                     <Icon><AiOutlineCopy style={{ height: "100%", width: "100%" }}/></Icon>
                 </ContainerLabel>
-                <Input placeholder="Mude a descrição" defaultValue={event?.description} autoComplete="off" name="description" error={errors} border ={!!errors?.description?.message} {...register("description")}></Input>
+                <Input defaultValue={event?.description} autoComplete="off" name="description" error={errors} border ={!!errors?.description?.message} {...register("description")}></Input>
                 {!!errors?.description?.message && <Alert>{errors?.description?.message}</Alert>}
             </ContainerInput>
             <ContainerSelect>
                 <ContainerLabel>
                     <Label>Categoria:</Label>
                 </ContainerLabel>
-                <Select name="category" error={errors} defaultValue={event?.category} border ={!!errors?.category?.message} {...register("category")}>
+                <Select defaultValue={event?.category} name="category" error={errors}  border ={!!errors?.category?.message} {...register("category")}>
                     <Option value="Pequeno">Pequeno</Option>
                     <Option value="Médio">Médio</Option>
                     <Option value="Grande">Grande</Option>
@@ -96,5 +93,5 @@ ModalEdit.propTypes = {
     isModalOpen: PropTypes.bool.isRequired,
     setIsModalOpen: PropTypes.func.isRequired,
     setEvent: PropTypes.func.isRequired,
-    event: PropTypes.object.isRequired,
+    event: PropTypes.object,
   };

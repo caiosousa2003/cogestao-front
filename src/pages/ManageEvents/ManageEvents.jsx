@@ -1,4 +1,4 @@
-import { Alert, Button, ContainerInput, ContainerLabel, ContainerList, ContainerLoading, ContainerMain, ContainerModalConfirm, ContainerModalEdit, ContainerSelect, Select, Form, Icon, Input, Label, Line, Title, Option, LoadIcon } from "./styles";
+import { Alert, Button, ContainerInput, ContainerLabel, ContainerList, ContainerLoading, ContainerMain, ContainerModalConfirm, ContainerModalEdit, ContainerSelect, Select, Form, Icon, Input, Label, Line, Title, Option, LoadIcon } from "./Styles";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CardEvent from "../../components/Card/Card";
@@ -16,6 +16,8 @@ function ManageEvents() {
   const [isModalEditOpen, setIsModalEditOpen] = useState(false);
   const [id, setId] = useState();
   const [event, setEvent] = useState();
+
+  console.log(event);
 
   const queryClient = useQueryClient();
 
@@ -41,8 +43,8 @@ function ManageEvents() {
     createEvent(data);
   };
 
-  const showModalConfirm = (id_event) => {
-    setId(id_event);
+  const showModalConfirm = (event) => {
+    setId(event?._id);
     setIsModalConfirmOpen(true);
   };
 
@@ -101,7 +103,7 @@ function ManageEvents() {
       <ContainerList>
         {events ? 
           events.map((event, index) => (
-            <CardEvent key={index} event={event} showModalConfirm={() => showModalConfirm(event?._id)} showModalEdit={() => showModalEdit(event)}></CardEvent>
+            <CardEvent key={index} event={event} showModalConfirm={() => showModalConfirm(event)} showModalEdit={() => showModalEdit(event)}></CardEvent>
         ))
         : <Alert>Nenhum evento cadastrado</Alert>
         }

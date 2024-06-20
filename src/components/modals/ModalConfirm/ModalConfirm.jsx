@@ -54,6 +54,6 @@ ModalConfirm.propTypes = {
     isModalOpen: PropTypes.bool.isRequired,
     setIsModalOpen: PropTypes.func.isRequired,
     setId: PropTypes.func.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     item: PropTypes.string.isRequired,
   };
