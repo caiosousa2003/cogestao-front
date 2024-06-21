@@ -6,6 +6,8 @@ import { validador } from "./utils";
 import PropTypes from 'prop-types';
 import { useQueryClient } from "@tanstack/react-query";
 import { useUpdateEvents } from "../../../hooks/query/Event";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ModalEdit({ isModalOpen, setIsModalOpen, event, setEvent }) {
 
@@ -18,10 +20,10 @@ export default function ModalEdit({ isModalOpen, setIsModalOpen, event, setEvent
           queryClient.invalidateQueries({
             queryKey: ["events"],
           });
-          alert("Projeto alterado com sucesso!");
+          toast.success("Evento alterado com sucesso!");
         },
         onError: (err) => {
-          alert(err.response.data.message);
+          toast.error(err.response.data.message);
         },
       });
 
@@ -39,6 +41,7 @@ export default function ModalEdit({ isModalOpen, setIsModalOpen, event, setEvent
     };
 
 return (
+    <>
     <ModalStyle
         open={isModalOpen}
         onCancel={cancel}
@@ -86,6 +89,7 @@ return (
             </Form>
         </GlobalDiv>
     </ModalStyle>
+    </>
 );
 }
 

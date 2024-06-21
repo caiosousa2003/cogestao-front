@@ -8,6 +8,8 @@ import {
 } from "./Styles";
 import PropTypes from 'prop-types';
 import { useDeleteEvents } from "../../../hooks/query/Event";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
   
 export default function ModalConfirm({ isModalOpen, setIsModalOpen, setId, id, item }) {
 
@@ -20,7 +22,7 @@ export default function ModalConfirm({ isModalOpen, setIsModalOpen, setId, id, i
             });
         },
         onError: (err) => {
-            alert(err.response.data.message);
+            toast.error(err.response.data.message);
         },
     });
 
@@ -36,6 +38,7 @@ export default function ModalConfirm({ isModalOpen, setIsModalOpen, setId, id, i
     };
 
 return (
+    <>
     <ModalStyle
         open={isModalOpen}
         onCancel={cancel}
@@ -47,6 +50,7 @@ return (
         <ModalButton onClick={confirmDelete}>EXCLUIR</ModalButton>
         </GlobalDiv>
     </ModalStyle>
+    </>
 );
 }
 

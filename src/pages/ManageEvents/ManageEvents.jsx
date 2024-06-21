@@ -9,6 +9,8 @@ import { useState } from "react";
 import ModalConfirm from "../../components/modals/ModalConfirm/ModalConfirm";
 import ModalEdit from "../../components/modals/ModalEdit/ModalEdit";
 import { validador } from "./utils";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ManageEvents() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm({ resolver: zodResolver(validador) });
@@ -22,8 +24,7 @@ function ManageEvents() {
   const queryClient = useQueryClient();
 
   const { data: events, isLoading } = useGetEvents({
-      onError: (err) => {
-          alert(err.response.data.message);
+      onError: () => {
       },
   });
 
@@ -35,7 +36,7 @@ function ManageEvents() {
           reset();
       },
       onError: (err) => {
-          alert(err.response.data.message);
+          toast.error(err.response.data.message);
       },
   });
 
